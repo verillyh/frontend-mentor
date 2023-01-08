@@ -17,18 +17,14 @@ body {
     font-size: 12px;;
 }
 
-h1 {
-    color: hsl(238, 29%, 16%);
-    font-size: 2.5em;
-}
-
 /* || MAIN SECTION */
 main {
     display: flex;
-    min-height: 60%;
-    max-height: 75%;
-    min-width: 60%;
-    max-width: 65%;
+    justify-content: space-between;
+    height: 60%;
+    width: 70%;
+    /* min-width: ; */
+    max-width: 1248px;
     margin: auto;
     border-radius: 20px;
     background-color: white;
@@ -36,23 +32,71 @@ main {
 
 /* || MAIN -> IMG */
 .img {
+    /* overflow: hidden; */
+    position: relative;
     flex-shrink: 0;
-    flex-basis: 45%;
+    width: 45%;
+}
+
+.img img {
+    position: absolute;
+}
+
+.img #woman {
+    margin: auto 0;
+    top: 0;
+    bottom: 0;
+    left: -50px;
+}
+
+.img #box {
+    overflow: visible;
+    height: 100px;
+    width: 100px;
+    left: -200px;
 }
 
 /* || MAIN -> FAQ */
 .faq {
-    padding: 3rem 0;
+    padding: 4rem 8rem 4rem 1rem;
+    width: 55%;
+}
+
+.faq h1 {
+    margin-bottom: 1.5rem;
+    color: hsl(238, 29%, 16%);
+    font-size: 3em;
 }
 
 .faq-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.9rem;
+    padding-bottom: 0.9rem;
+    border-bottom: hsl(240, 5%, 91%) 1px solid;
     color: hsl(237, 12%, 33%);
-    font-size: 1.25em;
+    font-size: 1.5em;
+}
+
+.faq-title:hover {
+    cursor: pointer;
 }
 
 .faq-desc {
+    display: none;
     color: hsl(240, 6%, 50%); 
 }
+
+/* ARROW ICON */
+.faq-title::after {
+    content: "";
+    background: url(./images/icon-arrow-down.svg) no-repeat;
+    height: 10px;
+    width: 20px;
+}
+
+/* || ATTRIBUTION SECTION */
 
 .attribution { 
     font-size: 11px; 
