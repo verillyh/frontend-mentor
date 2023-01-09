@@ -31,33 +31,33 @@ main {
 }
 
 /* || MAIN -> IMG */
-.img {
-    /* overflow: hidden; */
+section.decor-image {
     position: relative;
-    flex-shrink: 0;
     width: 45%;
+    flex-shrink: 0;
 }
 
-.img img {
+.decor-image img {
     position: absolute;
 }
 
-.img #woman {
+.decor-image #woman {
     margin: auto 0;
     top: 0;
     bottom: 0;
-    left: -50px;
 }
 
-.img #box {
-    overflow: visible;
-    height: 100px;
-    width: 100px;
-    left: -200px;
+.decor-image #box {
+
+}
+
+.hide {
+    height: 100%;
+    overflow: hidden;
 }
 
 /* || MAIN -> FAQ */
-.faq {
+section.faq {
     padding: 4rem 8rem 4rem 1rem;
     width: 55%;
 }
