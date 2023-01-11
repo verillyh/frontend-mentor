@@ -21,10 +21,8 @@ body {
 main {
     display: flex;
     justify-content: space-between;
-    height: 60%;
-    width: 70%;
-    /* min-width: ; */
-    max-width: 1248px;
+    height: 645px;
+    width: 1100px;
     margin: auto;
     border-radius: 20px;
     background-color: white;
@@ -41,19 +39,29 @@ section.decor-image {
     position: absolute;
 }
 
-.decor-image #woman {
-    margin: auto 0;
-    top: 0;
-    bottom: 0;
-}
-
-.decor-image #box {
-
+#box {
+    z-index: 2;
+    top: 270px;
+    left: -93px;
 }
 
 .hide {
-    height: 100%;
+    height: 100%;   
+    position: relative;
     overflow: hidden;
+}
+
+#woman {
+    z-index: 1;
+    margin: auto 0;
+    top: 0;
+    bottom: 0;
+    left: -75px;
+}
+
+#background {
+    bottom: -110px;
+    right: 5em;
 }
 
 /* || MAIN -> FAQ */
@@ -63,7 +71,7 @@ section.faq {
 }
 
 .faq h1 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
     color: hsl(238, 29%, 16%);
     font-size: 3em;
 }
