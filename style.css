@@ -93,6 +93,7 @@ section.faq {
 
 .faq-desc {
     display: none;
+    font-size: 0.9rem;
     color: hsl(240, 6%, 50%); 
 }
 
@@ -105,7 +106,6 @@ section.faq {
 }
 
 /* || ATTRIBUTION SECTION */
-
 .attribution { 
     font-size: 11px; 
     text-align: center; 
@@ -113,4 +113,22 @@ section.faq {
 
 .attribution a { 
     color: hsl(228, 45%, 44%); 
+}
+
+/* || ACCESSORIES */
+.title-active {
+    margin-bottom: 0;
+    border: none;
+    font-weight: bold;
+    color: hsl(238, 29%, 16%);
+}
+
+.desc-active {
+    display: block;
+    border-bottom: hsl(240, 5%, 91%) 1px solid;
+    padding-bottom: 0.9rem;
+}
+
+.parent-active {
+    margin-bottom: 0.9rem;
 }
