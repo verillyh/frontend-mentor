@@ -76,13 +76,18 @@ section.faq {
     font-size: 3em;
 }
 
+.faq-item {
+    margin-bottom: 0.9rem;
+    border-bottom: hsl(240, 5%, 91%) 1px solid;
+    transition: height 2s;
+}
+
 .faq-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.9rem;
     padding-bottom: 0.9rem;
-    border-bottom: hsl(240, 5%, 91%) 1px solid;
+    
     color: hsl(237, 12%, 33%);
     font-size: 1.5em;
 }
@@ -118,14 +123,12 @@ section.faq {
 /* || ACCESSORIES */
 .title-active {
     margin-bottom: 0;
-    border: none;
     font-weight: bold;
     color: hsl(238, 29%, 16%);
 }
 
 .desc-active {
     display: block;
-    border-bottom: hsl(240, 5%, 91%) 1px solid;
     padding-bottom: 0.9rem;
 }
 
