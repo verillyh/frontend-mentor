@@ -1,4 +1,4 @@
-/* || Arrow functions */
+/* || Arrow functions || */
 function addArrow (element) {
     /* Give arrow svg */
     var arrow = document.createElement("img");
@@ -12,7 +12,8 @@ function transfromArrow (arrow) {
     arrow.classList.toggle("rotate");
 }
 
-/* || Active functions  */
+
+/* || Active functions || */
 function toggleFaqActive (item) {
     /* Set faq items to active mode */
     item.parentElement.classList.toggle("parent-active");
@@ -22,14 +23,14 @@ function toggleFaqActive (item) {
 
 function listenForClicks (items) {
     /* Listen for click events -> faq-items */
-    length = items.length;
+    var length = items.length;
 
     for (let i = 0; i < length; i++) {
         addArrow(items[i]);
 
         items[i].addEventListener("click", function () {
             // Get which element was active before
-            activeElement = document.querySelector(".title-active");
+            var activeElement = document.querySelector(".title-active");
 
             // If no element was clicked before..
             if (activeElement == null) {
@@ -52,10 +53,32 @@ function listenForClicks (items) {
 }
 
 
+/* || Media query functions || */
+function mobileListener (media) {
+    let mainElement = document.querySelector("main");
+    let newImage = document.createElement("img");
+    let imagesNode = document.querySelector(".decor-image");
+    
+    if (media.matches) {
+        mainElement.style.flexDirection = "column";
+
+        newImage.setAttribute("src", "./images/illustration-woman-online-mobile.svg")
+        newImage.classList.add("mobile-image");
+        
+        imagesNode.replaceChildren(newImage);
+    }
+}
+
+
+
 // When the page is loaded...
 document.addEventListener("DOMContentLoaded", () => {
-    faqList = document.getElementsByClassName("faq-title");
+    // Init variables
+    const faqList = document.getElementsByClassName("faq-title");
+    const mobileMediaQuery = window.matchMedia("(max-width: 1185px)");
     
     listenForClicks(faqList);
-
+    // Listen for media query events
+    mobileMediaQuery.addEventListener("change", mobileListener);
+    mobileListener(mobileMediaQuery);
 })

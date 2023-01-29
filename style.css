@@ -30,7 +30,7 @@ main {
 
 @media screen and (max-width: 1185px) {
     main {
-        height: 650px;
+        height: 625px;
         width: 325px;  
     }
 }
@@ -69,6 +69,11 @@ section.decor-image {
 #background {
     bottom: -110px;
     right: 5em;
+}
+
+.mobile-image {
+    width: 250px; 
+    
 }
 
 /* || MAIN -> FAQ */
