@@ -28,13 +28,6 @@ main {
     background-color: white;
 }
 
-@media screen and (max-width: 1185px) {
-    main {
-        height: 625px;
-        width: 325px;  
-    }
-}
-
 /* || MAIN -> IMG */
 section.decor-image {
     position: relative;
@@ -71,9 +64,16 @@ section.decor-image {
     right: 5em;
 }
 
-.mobile-image {
-    width: 250px; 
-    
+#mobile-image {
+    width: 100%; 
+    position: relative;
+    top: -115px;
+}
+
+#mobile-bg {
+    position: absolute;
+    top: 0px;
+    left: 2px;
 }
 
 /* || MAIN -> FAQ */
@@ -83,6 +83,7 @@ section.faq {
 }
 
 .faq h1 {
+    width: fit-content;
     margin-bottom: 1.75rem;
     color: hsl(238, 29%, 16%);
     font-size: 3em;
@@ -149,4 +150,42 @@ section.faq {
 
 .rotate {
     transform: rotate(180deg);
+}
+
+@media screen and (max-width: 1185px) {
+    main {
+        height: 525px;
+        width: 325px;  
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section.decor-image {
+        height: 110px;
+        width: 250px;
+        position: relative;
+    }   
+
+    section.faq {
+        height: 100%;
+        width: 90%;
+        padding: 0;     
+    }
+
+    section.faq h1 {
+        margin: 1.75rem auto;
+    }
+
+    .faq-title {
+        font-size: 1.1em;
+    }
+
+    .faq-desc {
+        font-size: 0.75rem;
+    }
+
+    .arrow {
+        height: 6px;
+        width: 9px;
+    }
 }

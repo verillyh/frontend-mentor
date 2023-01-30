@@ -55,17 +55,19 @@ function listenForClicks (items) {
 
 /* || Media query functions || */
 function mobileListener (media) {
-    let mainElement = document.querySelector("main");
-    let newImage = document.createElement("img");
+    let newWoman = document.createElement("img");
+    let newBackground = document.createElement("img");
+    let newDiv = document.createElement("div");
     let imagesNode = document.querySelector(".decor-image");
     
     if (media.matches) {
-        mainElement.style.flexDirection = "column";
+        newWoman.setAttribute("src", "./images/illustration-woman-online-mobile.svg")
+        newWoman.setAttribute("id", "mobile-image");
+        newBackground.setAttribute("src", "./images/bg-pattern-mobile.svg");
+        newBackground.setAttribute("id", "mobile-bg");
 
-        newImage.setAttribute("src", "./images/illustration-woman-online-mobile.svg")
-        newImage.classList.add("mobile-image");
-        
-        imagesNode.replaceChildren(newImage);
+        imagesNode.replaceChildren(newWoman, newDiv);
+        newDiv.append(newBackground);
     }
 }
 
@@ -79,6 +81,5 @@ document.addEventListener("DOMContentLoaded", () => {
     
     listenForClicks(faqList);
     // Listen for media query events
-    mobileMediaQuery.addEventListener("change", mobileListener);
     mobileListener(mobileMediaQuery);
 })
