@@ -8,11 +8,51 @@
 }
 
 body {
-  background: url(./../images/bg-desktop.svg) no-repeat;
+  height: 100vh;
+  width: 100%;
+  padding-top: 100px;
+  background: url(./../images/bg-pattern-top-desktop.svg), url(./../images/bg-pattern-bottom-desktop.svg);
+  background-position: top left, bottom right;
+  background-repeat: no-repeat;
   font-family: "League Spartan";
   font-size: 15px;
 }
 
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 50px;
+  width: 1150px;
+  margin: auto;
+}
+
+/* || OPENING SECTION */
+.opening h1 {
+  width: 75%;
+  color: hsl(300deg, 43%, 22%);
+  font-size: 3.5em;
+}
+.opening p.description {
+  width: 75%;
+  padding-top: 20px;
+  color: hsl(303deg, 10%, 53%);
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+/* || RATING ITEM */
+.rating .rating-item {
+  margin-bottom: 15px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: hsl(300deg, 24%, 96%);
+  color: hsl(300deg, 43%, 22%);
+  font-size: 1.15em;
+  font-weight: 700;
+}
+
+/* || FOOTER */
 .attribution {
   font-size: 11px;
   text-align: center;

@@ -1,24 +1,72 @@
 /* || VARIABLES & FONTS*/
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
-$primary-magenta: hsl(300, 43%, 22%);
-$primary-pink: hsl(333, 80%, 67%);
-$neutral-lightmagenta: hsl(303, 10%, 53%);
-$neutral-darkmagenta: hsl(300, 24%, 96%);
+$color: (
+  "primary-magenta": hsl(300, 43%, 22%),
+  "primary-pink": hsl(333, 80%, 67%),
+  "neutral-darkmagenta": hsl(303, 10%, 53%),
+  "neutral-lightmagenta": hsl(300, 24%, 96%)
+);
+
+$background: url(./../images/bg-pattern-top-desktop.svg), url(./../images/bg-pattern-bottom-desktop.svg);
 
 /* || GENERAL STYLING */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background: url(./../images/bg-desktop.svg) no-repeat;
-    font-family: 'League Spartan';
-    font-size: 15px;
+  height: 100vh;
+  width: 100%;
+  padding-top: 100px;
+  background: $background;
+  background-position: top left, bottom right;
+  background-repeat: no-repeat;
+  font-family: 'League Spartan';
+  font-size: 15px;
 }
 
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 50px;
+  width: 1150px;
+  margin: auto;
+}
 
+/* || OPENING SECTION */
+.opening {
+  h1 {
+    width: 75%;
+    color: map-get($color, primary-magenta);
+    font-size: 3.5em;
+  }
+
+  p.description {
+    width: 75%;
+    padding-top: 20px;
+    color: map-get($color, neutral-darkmagenta);
+    font-size: 1.1em;
+    font-weight: 500;
+  }
+}
+
+/* || RATING ITEM */
+.rating {
+  .rating-item {
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: map-get($color, neutral-lightmagenta);
+    color: map-get($color, primary-magenta);
+    font-size: 1.15em;
+    font-weight: 700;
+  }
+}
+
+/* || FOOTER */
 .attribution {
   font-size: 11px;
   text-align: center;
