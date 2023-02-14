@@ -56,13 +56,20 @@ main {
 /* || RATING ITEM */
 .rating {
   .rating-item {
+    display: flex;
+    align-items: center;
+    width: 80%;
     margin-bottom: 15px;
-    padding: 20px;
+    padding: 16px;
     border-radius: 8px;
     background-color: map-get($color, neutral-lightmagenta);
     color: map-get($color, primary-magenta);
     font-size: 1.15em;
     font-weight: 700;
+  }
+
+  .stars {
+    margin: 0 25px 0 10px;
   }
 }
 
@@ -77,5 +84,9 @@ main {
 
 /* || ACCESSORIES */
 .star {
-
+  display: inline-block;
+  height: 17px;
+  width: 17px;
+  margin-right: 7.5px;
+  background: url(./../images/icon-star.svg) no-repeat;
 }

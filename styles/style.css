@@ -43,13 +43,19 @@ main {
 
 /* || RATING ITEM */
 .rating .rating-item {
+  display: flex;
+  align-items: center;
+  width: 80%;
   margin-bottom: 15px;
-  padding: 20px;
+  padding: 16px;
   border-radius: 8px;
   background-color: hsl(300deg, 24%, 96%);
   color: hsl(300deg, 43%, 22%);
   font-size: 1.15em;
   font-weight: 700;
+}
+.rating .stars {
+  margin: 0 25px 0 10px;
 }
 
 /* || FOOTER */
@@ -60,4 +66,13 @@ main {
 
 .attribution a {
   color: hsl(228deg, 45%, 44%);
+}
+
+/* || ACCESSORIES */
+.star {
+  display: inline-block;
+  height: 17px;
+  width: 17px;
+  margin-right: 7.5px;
+  background: url(./../images/icon-star.svg) no-repeat;
 }/*# sourceMappingURL=style.css.map */
