@@ -13,3 +13,77 @@ $color: (
     font-weight: 400 800;
 }
 
+/* ---------- GENERAL STYLING ---------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    width: 90%;
+    margin: auto;
+    background-color: map-get($color, "off-white");;
+    font-family: Inter, sans-serif;
+    font-size: 15px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 1fr);
+    grid-template-rows: repeat(3, minmax(1fr, 600px));
+    row-gap: 50px;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* ---------- PAGE STYLING ---------- */
+
+/* || HEADER SECTION */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 0;
+
+    #header__logo { height: 35px };
+    #header__logo, #header__icon-menu:hover { cursor: pointer };
+}
+
+nav {
+    display: none;   
+    .nav__menu {
+        list-style-type: none;
+        li { display: inline };
+    }
+}
+
+/* || FEATURED-ARTICLE SECTION */
+.featured-article {
+    &__title {
+        margin: 0.3em 0;
+        color: map-get($color, "very-dark-blue");
+        font-size: 2.5rem;
+        font-variation-settings: "wght" 800;
+        line-height: 1;
+    }
+    &__description {
+        margin: 1em 0;
+        color: map-get($color, "grayish-blue");
+        line-height: 1.5;
+    }
+    &__read-more-button {
+        height: 35px;
+        width: 50%;
+        border: none;
+        background-color: map-get($color, "pri-soft-red");
+        color: map-get($color, "off-white");
+        font-variation-settings: "wght" 700;
+        letter-spacing: 4px;
+    }
+}
+
+#featured-article__hero { width: 100% };
