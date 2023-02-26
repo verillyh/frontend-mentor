@@ -40,29 +40,34 @@ button {
     font-family: inherit;
 }
 
+.description {
+    color: map-get($color, "grayish-blue");
+    line-height: 1.5;
+}
+
 /* ---------- PAGE STYLING ---------- */
 
 /* || HEADER SECTION */
-header {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2.5rem 0;
 
-    #header__logo { height: 35px };
-    #header__logo, #header__icon-menu:hover { cursor: pointer };
+    &__logo { height: 35px }
+    &__logo, &__icon-menu:hover { cursor: pointer }
 }
 
-nav {
-    display: none;   
-    .nav__menu {
-        list-style-type: none;
-        li { display: inline };
-    }
+.nav {
+    &__menu { list-style-type: none }
+}
+.mobile-nav {
+    display: none;
+    &__menu li { display: inline }
 }
 
 /* || FEATURED-ARTICLE SECTION */
-.featured-article {
+.main-article {
     &__title {
         margin: 0.3em 0;
         color: map-get($color, "very-dark-blue");
@@ -70,20 +75,46 @@ nav {
         font-variation-settings: "wght" 800;
         line-height: 1;
     }
-    &__description {
-        margin: 1em 0;
-        color: map-get($color, "grayish-blue");
-        line-height: 1.5;
-    }
+    &__description { margin: 1em 0 }
     &__read-more-button {
-        height: 35px;
+        height: 45px;
         width: 50%;
         border: none;
         background-color: map-get($color, "pri-soft-red");
         color: map-get($color, "off-white");
+        cursor: pointer;
         font-variation-settings: "wght" 700;
         letter-spacing: 4px;
     }
+    &__hero { width: 100% }
 }
 
-#featured-article__hero { width: 100% };
+/* || ASIDE ARTICLE */
+.aside-article {
+    padding: 1.5em 1em;
+    background-color: map-get($color, "very-dark-blue");
+    &__header {
+        margin-bottom: 0.8em;
+        font-size: 2rem;
+        color: map-get($color, "pri-soft-orange");
+    }
+}
+
+.featured-article {
+    margin-bottom: 1.75em;
+    padding-bottom: 1.25em;
+    border-bottom: 1px map-get($color, "grayish-blue") solid;
+    &__titles {
+        margin-bottom: 0.4em;
+        color: map-get($color, "off-white");
+    }
+    &__description { 
+        color: map-get($color, "off-white");
+        font-variation-settings: "wght" 250;
+    }
+    &--last-article{
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+}
