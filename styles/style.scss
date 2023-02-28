@@ -24,6 +24,7 @@ body {
     min-height: 100vh;
     width: 90%;
     margin: auto;
+    padding-bottom: 50px;
     background-color: map-get($color, "off-white");;
     font-family: Inter, sans-serif;
     font-size: 15px;
@@ -33,16 +34,22 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fill, 1fr);
     grid-template-rows: repeat(3, minmax(1fr, 600px));
-    row-gap: 50px;
+    row-gap: 75px;
 }
-
 button {
     font-family: inherit;
 }
-
 .description {
     color: map-get($color, "grayish-blue");
     line-height: 1.5;
+    &--color-ofwhite { color: map-get($color, "off-white") };
+    &--fontwght-lighter { font-variation-settings: "wght" 250 };
+    &--no-margin { margin: 0 }; 
+}
+.article-title {
+    margin-bottom: 0.4em;
+    color: map-get($color, "off-white");
+    &--color-darkblue { color: map-get($color, "very-dark-blue") }
 }
 
 /* ---------- PAGE STYLING ---------- */
@@ -66,7 +73,7 @@ button {
     &__menu li { display: inline }
 }
 
-/* || FEATURED-ARTICLE SECTION */
+/* || MAIN-ARTICLE SECTION */
 .main-article {
     &__title {
         margin: 0.3em 0;
@@ -93,6 +100,7 @@ button {
 .aside-article {
     padding: 1.5em 1em;
     background-color: map-get($color, "very-dark-blue");
+
     &__header {
         margin-bottom: 0.8em;
         font-size: 2rem;
@@ -100,21 +108,41 @@ button {
     }
 }
 
-.featured-article {
+.fresh-article {
     margin-bottom: 1.75em;
     padding-bottom: 1.25em;
     border-bottom: 1px map-get($color, "grayish-blue") solid;
-    &__titles {
-        margin-bottom: 0.4em;
-        color: map-get($color, "off-white");
-    }
-    &__description { 
-        color: map-get($color, "off-white");
-        font-variation-settings: "wght" 250;
-    }
-    &--last-article{
+    &--last-article {
         margin: 0;
         padding: 0;
         border: none;
     }
+}
+
+/* || FEATURED ARTICLES SECTION */
+.featured-articles-container {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 35px;
+}
+
+.featured-article {
+    display: flex;
+    column-gap: 20px;
+    &__thumbnail {
+        height: 125px;
+    }
+    &__article-number {
+        font-size: 2rem;
+        color: hsl(236, 13%, 80%);
+    }
+    &__text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+.featured-article__text-container {
+
 }
