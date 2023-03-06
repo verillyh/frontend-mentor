@@ -13,17 +13,20 @@
 </head>
 <body>
   <header class="header">
-    <img src="./assets/images/logo.svg" alt="logo" class="header__logo" />
-    <img src="./assets/images/icon-menu.svg" alt="menu-icon" class="header__icon-menu">
-    <nav class="nav mobile-nav">
-      <ol class="mobile-nav__menu">
-        <li>Home</li>
-        <li>New</li>
-        <li>Popular</li>
-        <li>Trending</li>
-        <li>Categories</li>
-      </ol>
-    </nav>
+    <img src="./assets/images/logo.svg" alt="logo" class="header__logo btn" />
+    <img src="./assets/images/icon-menu.svg" alt="menu-icon" class="header__icon-menu btn" />
+    <div class="nav-mobile-wrapper">
+      <nav class="nav">
+        <img src="./assets/images/icon-menu-close.svg" alt="close-menu-icon" class="nav--mobile__close-menu btn" />
+        <ol class="nav__menu"> 
+          <li>Home</li>
+          <li>New</li>
+          <li>Popular</li>
+          <li>Trending</li>
+          <li>Categories</li>
+        </ol>
+      </nav>
+    </div>
   </header>
   
   <main>
@@ -36,7 +39,7 @@
         We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
         But is it really fulfilling its promise?
       </p>
-      <button class="main-article__read-more-button">READ MORE</button>
+      <button class="main-article__read-more-button btn">READ MORE</button>
     </article>
   
     <aside class="aside-article">

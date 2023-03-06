@@ -32,6 +32,10 @@ button {
   font-family: inherit;
 }
 
+.btn {
+  cursor: pointer;
+}
+
 .description {
   color: hsl(236, 13%, 42%);
   line-height: 1.5;
@@ -65,19 +69,41 @@ button {
 .header__logo {
   height: 35px;
 }
-.header__logo, .header__icon-menu:hover {
-  cursor: pointer;
+
+.nav-mobile-wrapper {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: hsla(240, 100%, 5%, 0.4);
 }
 
+.nav {
+  display: none;
+}
 .nav__menu {
   list-style-type: none;
 }
-
-.mobile-nav {
-  display: none;
+.nav__menu li {
+  margin-bottom: 25px;
+  color: hsl(240, 100%, 5%);
+  cursor: pointer;
 }
-.mobile-nav__menu li {
-  display: inline;
+.nav--mobile {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 2em 1.2em;
+  width: 70vw;
+  height: 100vh;
+  background-color: white;
+}
+.nav--mobile__close-menu {
+  display: block;
+  margin: 0 0 100px auto;
 }
 
 /* || MAIN-ARTICLE SECTION */
@@ -97,7 +123,6 @@ button {
   border: none;
   background-color: hsl(5, 85%, 63%);
   color: hsl(36, 100%, 99%);
-  cursor: pointer;
   font-variation-settings: "wght" 700;
   letter-spacing: 4px;
 }
@@ -150,4 +175,9 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+/* || ACCESSORIES */
+.display-iblock {
+  display: inline-block;
 }/*# sourceMappingURL=style.css.map */

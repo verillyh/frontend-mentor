@@ -39,6 +39,7 @@ main {
 button {
     font-family: inherit;
 }
+.btn { cursor: pointer };
 .description {
     color: map-get($color, "grayish-blue");
     line-height: 1.5;
@@ -62,15 +63,43 @@ button {
     padding: 2.5rem 0;
 
     &__logo { height: 35px }
-    &__logo, &__icon-menu:hover { cursor: pointer }
+}
+
+.nav-mobile-wrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: hsl(240, 100%, 5%, 0.4);
+    
 }
 
 .nav {
-    &__menu { list-style-type: none }
-}
-.mobile-nav {
     display: none;
-    &__menu li { display: inline }
+    &__menu { 
+        list-style-type: none;
+        li { 
+            margin-bottom: 25px;
+            color: map-get($color, "very-dark-blue");
+            cursor: pointer;
+        };
+    }
+    &--mobile {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 2em 1.2em;
+        width: 70vw;
+        height: 100vh;
+        background-color: white;
+        &__close-menu {
+            display: block;
+            margin: 0 0 100px auto;
+        }
+    }
 }
 
 /* || MAIN-ARTICLE SECTION */
@@ -89,7 +118,6 @@ button {
         border: none;
         background-color: map-get($color, "pri-soft-red");
         color: map-get($color, "off-white");
-        cursor: pointer;
         font-variation-settings: "wght" 700;
         letter-spacing: 4px;
     }
@@ -143,6 +171,5 @@ button {
     }
 }
 
-.featured-article__text-container {
-
-}
+/* || ACCESSORIES */
+.display-iblock { display: inline-block };
