@@ -15,6 +15,7 @@
   <header class="header">
     <img src="./assets/images/logo.svg" alt="logo" class="header__logo btn" />
     <img src="./assets/images/icon-menu.svg" alt="menu-icon" class="header__icon-menu btn" />
+    <!--Mobile version-->
     <div class="nav-mobile-wrapper">
       <nav class="nav">
         <img src="./assets/images/icon-menu-close.svg" alt="close-menu-icon" class="nav--mobile__close-menu btn" />
@@ -27,25 +28,44 @@
         </ol>
       </nav>
     </div>
+    <!--Desktop version-->
+    <nav class="nav nav--desktop">
+      <ol class="nav__menu nav--desktop__menu">
+        <li>Home</li>
+        <li>New</li>
+        <li>Popular</li>
+        <li>Trending</li>
+        <li>Categories</li>
+      </ol>
+    </nav>
   </header>
   
   <main>
     <article class="main-article">
-      <img src="./assets/images/image-web-3-mobile.jpg" alt="cover" class="main-article__hero">
+      <!--Mobile version-->
+      <img src="./assets/images/image-web-3-mobile.jpg" alt="cover" class="main-article__hero--mobile">
+      <!--Desktop version-->
+      <img src="./assets/images/image-web-3-desktop.jpg" alt="cover" class="main-article__hero--desktop">
+      <!-- <div class="main-article__hero--desktop"></div> -->
+      
       <h1 class="main-article__title">
         The Bright Future of Web 3.0?
       </h1>
-      <p class="main-article__description description">
-        We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
-        But is it really fulfilling its promise?
-      </p>
-      <button class="main-article__read-more-button btn">READ MORE</button>
+
+      <div class="container">
+        <p class="main-article__description description">
+          We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+          But is it really fulfilling its promise?
+        </p>
+        <button class="main-article__read-more-button btn">READ MORE</button>
+      </div>
+
     </article>
   
     <aside class="aside-article">
       <h2 class="aside-article__header">New</h2>
       <article class="fresh-article">
-        <h3 class="article-title">
+        <h3 class="article-title hover--color-soft-orange">
           Hydrogen VS Electric Cars
         </h3>
         <p class="description description--color-off-white description--fontwght-lighter">
@@ -53,7 +73,7 @@
         </p>
       </article>
       <article class="fresh-article">
-        <h3 class="article-title">
+        <h3 class="article-title hover--color-soft-orange">
           The Downsides of AI Artistry
         </h3>
         <p class="description description--color-off-white" description--fontwght-lighter>
@@ -61,7 +81,7 @@
         </p>
       </article>
       <article class="fresh-article fresh-article--last-article">
-        <h3 class="article-title">
+        <h3 class="article-title hover--color-soft-orange">
           Is VC Funding Drying Up?
         </h3>
         <p class="description description--color-off-white description--fontwght-lighter">
@@ -75,10 +95,10 @@
         <img src="./assets/images/image-retro-pcs.jpg" alt="article-image" class="featured-article__thumbnail"/>
         <div class="featured-article__text-container">
           <h2 class="featured-article__article-number">01</h2>
-          <h3 class="article-title article-title--color-darkblue">
+          <h3 class="article-title article-title--color-darkblue hover--color-soft-red">
             Reviving Retro PCs
           </h3>
-          <p class="description description--no-margin">
+          <p class="description">
             What happens when old PCs are given modern upgrades?
           </p>
         </div>
@@ -87,10 +107,10 @@
         <img src="./assets/images/image-top-laptops.jpg" alt="article-image" class="featured-article__thumbnail">
         <div class="featured-article__text-container">
           <h2 class="featured-article__article-number">02</h2>
-          <h3 class="article-title article-title--color-darkblue">
+          <h3 class="article-title article-title--color-darkblue hover--color-soft-red">
             Top 10 Laptops of 2022
           </h3>
-          <p class="description description--no-margin">
+          <p class="description">
             Our best picks for various needs and budgets.
           </p>
         </div>
@@ -99,10 +119,10 @@
         <img src="./assets/images/image-gaming-growth.jpg" alt="article-image" class="featured-article__thumbnail">
         <div class="featured-article__text-container">
           <h2 class="featured-article__article-number">03</h2>
-          <h3 class="article-title article-title--color-darkblue">
+          <h3 class="article-title article-title--color-darkblue hover--color-soft-red">
             The Growth of Gaming
           </h3>
-          <p class="description description--no-margin">
+          <p class="description">
             How the pandemic has sparked fresh opportunities.
           </p>
         </div>

@@ -6,6 +6,8 @@ $color: (
     "grayish-blue": hsl(236, 13%, 42%),
     "very-dark-blue": hsl(240, 100%, 5%)
 );
+$column-height: 190px;
+$featured-article-height: 125px; 
  
 @font-face {
     font-family: Inter;
@@ -32,20 +34,23 @@ body {
 
 main {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 1fr);
-    grid-template-rows: repeat(3, minmax(1fr, 600px));
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, minmax($column-height, auto));
+    column-gap: 30px;
     row-gap: 75px;
 }
 button {
     font-family: inherit;
 }
-.btn { cursor: pointer };
+.btn { 
+    cursor: pointer;
+    display: block;
+}
 .description {
     color: map-get($color, "grayish-blue");
     line-height: 1.5;
-    &--color-ofwhite { color: map-get($color, "off-white") };
+    &--color-off-white { color: map-get($color, "off-white") };
     &--fontwght-lighter { font-variation-settings: "wght" 250 };
-    &--no-margin { margin: 0 }; 
 }
 .article-title {
     margin-bottom: 0.4em;
@@ -100,6 +105,23 @@ button {
             margin: 0 0 100px auto;
         }
     }
+    &--desktop {
+        display: none;
+        width: 40%;
+        &__menu {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-content: center;
+            li { 
+                margin: 0;
+                color: map-get($color, "grayish-blue");
+                &:hover { color: map-get($color, "pri-soft-red")}
+            }
+        }
+
+    }
+
 }
 
 /* || MAIN-ARTICLE SECTION */
@@ -121,12 +143,13 @@ button {
         font-variation-settings: "wght" 700;
         letter-spacing: 4px;
     }
-    &__hero { width: 100% }
+    &__hero--mobile { width: 100% }
+    &__hero--desktop { display: none }
 }
 
 /* || ASIDE ARTICLE */
 .aside-article {
-    padding: 1.5em 1em;
+    padding: 1.5em;
     background-color: map-get($color, "very-dark-blue");
 
     &__header {
@@ -156,9 +179,10 @@ button {
 
 .featured-article {
     display: flex;
+    height: $featured-article-height;
     column-gap: 20px;
     &__thumbnail {
-        height: 125px;
+        height: 100%;
     }
     &__article-number {
         font-size: 2rem;
@@ -172,4 +196,74 @@ button {
 }
 
 /* || ACCESSORIES */
-.display-iblock { display: inline-block };
+.display-iblock { display: inline-block }
+.hover--color-soft-red:hover { 
+    cursor: pointer;
+    color: map-get($color, "pri-soft-red");
+}
+.hover--color-soft-orange:hover {
+    cursor: pointer;
+    color: map-get($color, "pri-soft-orange");
+}
+
+/* ---------- MEDIA QUERIES ---------- */
+@media screen and (min-width: 1200px) 
+{
+    body {
+        width: 1100px;  
+    }
+    main {  
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, $column-height) $featured-article-height;
+    }
+
+    .header {
+        margin-bottom: 2rem;
+        &__icon-menu { display: none; }
+    }
+    .nav {
+        &--mobile { display: none; }
+        &--desktop { display: block; }
+    }
+
+    .main-article { 
+        grid-column: 1 / span 2; 
+        grid-row: 1 / span 2;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 3fr 2fr;
+        row-gap: 20px;
+        column-gap: inherit;    
+        &__hero--mobile { display: none; }
+        &__hero--desktop { 
+            display: block;
+            grid-column: 1 / span 2;
+            grid-row: 1 / span 1;
+            height: 100%;
+            width: 100%;
+        }
+        &__title {
+            grid-row: 2 / span 1;
+            margin: 0;
+            align-self: center;
+            font-size: 3rem;
+        }
+        &__description { margin: 0; }
+        &__read-more-button { 
+            margin-top: 40px;
+            &:hover { background-color: map-get($color, "very-dark-blue"); }
+
+        }
+    }
+
+    .aside-article { 
+        grid-column: 3 / span 1; 
+        grid-row: 1 / span 2;
+    }
+
+    .featured-articles-container {
+        grid-column: span 3;
+        grid-row: 3 / span 1;
+        flex-flow: row nowrap;
+    }
+}
